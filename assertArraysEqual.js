@@ -1,22 +1,20 @@
-//Function implementation
-const assertArraysEqual = function(actual, expected)  {
+
+const assertArraysEqual = function(arrayOne, arrayTwo) {
   let emojiYes = String.fromCodePoint(0x1F7E2);
   let emojiNo = String.fromCodePoint(0x1F47E);
-  if (actual === expected)  {
-    console.log(`Assertion Passed:  ${actual} === ${expected}` + emojiYes + emojiYes + emojiYes + " Your arrays matched. Nice work!");
-  } else {
-    console.assert(actual === expected, (`${actual} !== ${expected}` + emojiNo + emojiNo + emojiNo + " Your arrays did not match. Please provide matching arrays ensuring data types also match."));
-  }
+  let result = eqArrays(arrayOne, arrayTwo);
+  if (result) return console.log(emojiYes, emojiYes, emojiYes, `Assertion Passed`,`${arrayOne} \t === \t ${arrayTwo}`);
+  console.log(emojiNo, emojiNo, emojiNo, `Assertion Failed`,`${arrayOne} \t !== \t ${arrayTwo}`);
 };
 
-//we need to make a function for eqArrays
-const eqArrays = function(array1, array2) {
-  // if (array1.toString() === array2.toString())  {  This line does not work because it returns issues with arrays that began with strings which should not match (see second last request, should fail, using this it passes erroneously)
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i])  {
-      return false;   //returns false if something in array1 does not match array2 in the above for loop
-    }
+const eqArrays = function(arrayOne, arrayTwo) {
+  if (arrayOne.length !== arrayTwo.length) return false;
+
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] === arrayTwo[i]) continue;
+    return false;
   }
+
   return true;
 };
 
