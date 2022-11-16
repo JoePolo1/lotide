@@ -20,32 +20,29 @@ const eqArrays = function(array1, array2) {
 
 //this without function takes in a source array and items to remove array. It should return a new array with only those elements from source that are not present in the itemsToRemove array.
 
-const without = function (source, itemsToRemove) {
-  //since we are returning a new array, declaring an empty one here
-  // use includes method
+const without = function(source, itemsToRemove) {
+  //since we are returning a new array, declaring an empty one here. This uses the include method to check if one array includes another ones values while also ensuring that we have not already added the value
   let trimmedArray = [];
   for (let i = 0; i < source.length; i++) {
     if (!itemsToRemove.includes(source[i]) && !trimmedArray.includes(source[i])) {
       trimmedArray.push(source[i]);
-    } 
+    }
   } return trimmedArray;
 };
 
 
 //TEST CASE 1 and 2
-console.log(without([1, 2, 3], [1])) // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])) // => ["1", "2"]
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 // Among your test cases, be sure to include an important test that is easy to overlook: The without function should be returning a new array and not modify the original array that is passed in. Let's write a test case to ensure this:
 
 const words = ["hello", "world", "lighthouse"];
-console.log(without(words, ["lighthouse"])); 
-console.log(words);
+console.log(without(words, ["lighthouse"]));
 
 // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
 assertArraysEqual(eqArrays(words, ["hello", "world", "lighthouse"]));
 
-assertArraysEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
-assertArraysEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);  
+//this checks to see that eqArrays still works within this built in functionality
+assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
