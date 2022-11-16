@@ -11,10 +11,10 @@ const assertEqual = function(actual, expected)  {
 
 //we need to make a function for eqArrays
 const eqArrays = function(array1, array2) {
-  // if (array1.toString() === array2.toString())  {
+  // if (array1.toString() === array2.toString())  {  This line does not work because it returns issues with arrays that began with strings which should not match (see second last request, should fail, using this it passes erroneously)
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i])  {
-      return false;
+      return false;   //returns false if something in array1 does not match array2 in the above for loop
     }
   }
   return true;
