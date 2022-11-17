@@ -1,24 +1,26 @@
-//Function implementation that takes actual and expected parameters
-const assertArraysEqual = function(actual, expected)  {
+//Assert Objects Equal
+const assertObjectsEqual = function(actual, expected) {
   let emojiYes = String.fromCodePoint(0x1F7E2);
   let emojiNo = String.fromCodePoint(0x1F47E);
-  if (actual === expected)  {
-    console.log(`Assertion Passed:  ${actual} === ${expected} ` + emojiYes + emojiYes + emojiYes + " Actual matched expected. Nice work! " + emojiYes + emojiYes + emojiYes);
+  const inspect = require('util').inspect;
+  // let result = eqObjects(actual, expected);
+  if (actual === expected) { 
+    return console.log(emojiYes + emojiYes + emojiYes + ` Assertion Passed `, emojiYes + emojiYes + emojiYes +` ${inspect(actual)} \t === \t ${inspect(expected)}`)
   } else {
-    console.assert(actual === expected, (`${actual} !== ${expected} ` + emojiNo + emojiNo + emojiNo + " Actual did not match Expected. " + emojiNo + emojiNo + emojiNo));
-  }
+    console.log(emojiNo + emojiNo + emojiNo + ` Assertion Failed `, emojiNo + emojiNo + emojiNo + ` ${inspect(actual)} \t !== \t ${inspect(expected)}`);
+  } 
 };
 
-// EQ Arrays function
-const eqArrays = function(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i])  {
-      return false;   //returns false if something in array1 does not match array2 in the above for loop
-    }
+// eqArrays
+const eqArrays = function(arrayOne, arrayTwo) {
+  if (arrayOne.length !== arrayTwo.length) return false;
+
+  for (let i = 0; i < arrayOne.length; i++) {
+    if (arrayOne[i] !== arrayTwo[i]) return false;
   }
+
   return true;
 };
-
 
 // function for taking in two objects and returns true or false, based on a perfect match.
 // Returns true if both objects have identical keys with identical values.
@@ -42,10 +44,10 @@ const eqObjects = function(object1, object2) {
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertObjectsEqual(eqObjects(ab, ba), true); // => true
+assertObjectsEqual(eqObjects(ab, ba), true); // => true should pass as true = true
 
 const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(eqObjects(ab, abc), false); // => false
+assertObjectsEqual(eqObjects(ab, abc), false); // => should return pass, as false = false
 
 assertObjectsEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
 assertObjectsEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy

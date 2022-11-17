@@ -42,7 +42,7 @@ console.log(without(words, ["lighthouse"]));
 
 // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
-assertArraysEqual(eqArrays(words, ["hello", "world", "lighthouse"]));
+assertObjectsEqual(eqArrays(words, ["hello", "world", "lighthouse"]));
 
 //this checks to see that eqArrays still works within this built in functionality
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
