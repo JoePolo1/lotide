@@ -1,20 +1,20 @@
-
-const assertArraysEqual = function(arrayOne, arrayTwo) {
+//Function implementation
+const assertArraysEqual = function(actual, expected)  {
   let emojiYes = String.fromCodePoint(0x1F7E2);
   let emojiNo = String.fromCodePoint(0x1F47E);
-  let result = eqArrays(arrayOne, arrayTwo);
-  if (result) return console.log(emojiYes, emojiYes, emojiYes, `Assertion Passed`,`${arrayOne} \t === \t ${arrayTwo}`);
-  console.log(emojiNo, emojiNo, emojiNo, `Assertion Failed`,`${arrayOne} \t !== \t ${arrayTwo}`);
+  if (actual === expected)  {
+    console.log(`Assertion Passed:  ${actual} === ${expected} ` + emojiYes + emojiYes + emojiYes + " Your arrays matched. Nice work! " + emojiYes + emojiYes + emojiYes);
+  } else {
+    console.assert(actual === expected, (`${actual} !== ${expected} ` + emojiNo + emojiNo + emojiNo + " Your arrays did not match. " + emojiNo + emojiNo + emojiNo));
+  }
 };
 
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) return false;
-
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] === arrayTwo[i]) continue;
-    return false;
+const eqArrays = function(array1, array2) {
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i])  {
+      return false;   //returns false if something in array1 does not match array2 in the above for loop
+    }
   }
-
   return true;
 };
 
