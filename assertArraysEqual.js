@@ -1,4 +1,4 @@
-//Function implementation
+//Assert Arrays Equals
 const assertArraysEqual = function(actual, expected)  {
   let emojiYes = String.fromCodePoint(0x1F7E2);
   let emojiNo = String.fromCodePoint(0x1F47E);
@@ -8,8 +8,11 @@ const assertArraysEqual = function(actual, expected)  {
     console.assert(actual === expected, (`${actual} !== ${expected} ` + emojiNo + emojiNo + emojiNo + " Actual did not match Expected. " + emojiNo + emojiNo + emojiNo));
   }
 };
-
+//EQArrays
 const eqArrays = function(array1, array2) {
+  //if arrays are different length, throws false immediately, else continue
+  if (array1.length !== array2.length) return false;
+
   for (let i = 0; i < array1.length; i++) {
     if (array1[i] !== array2[i])  {
       return false;   //returns false if something in array1 does not match array2 in the above for loop
