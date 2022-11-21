@@ -1,11 +1,13 @@
-const assertArraysEqualForMiddleFile = require('../assertArraysEqualForMiddleFile');
+const assert = require('chai').assert;
 const middle = require('../middle');
 
-console.log("The middle number of your array is ", middle([17, 22, 43, 54, 75]));
-console.log("The middle number of your array is ", middle([17, 22, 43, 54, 75, 1]));
+describe('#middle', ()  =>  {
+  it("should return the middle element in a provided array that contains an odd number of elements [43] for [17, 22, 43, 54, 75]",  ()  =>  {
+    assert.deepEqual(middle([17, 22, 43, 54, 75]), [43]);
+  });
+  it("should return the middle two elements in a provided array that contains an even number of elements [43, 54] for [17, 22, 43, 54, 75]",  ()  =>  {
+    assert.deepEqual(middle([17, 22, 43, 54, 75, 1]), [43, 54]);
+  });
+});
 
-// this is used to call the actual and expected results by running the middle function as "actual" and the expected as what we expect to return
-const actual = middle([17, 22, 43, 54, 75, 1]);
-const expected = [43, 54];
 
-assertArraysEqualForMiddleFile(actual, expected);
