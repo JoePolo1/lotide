@@ -32,6 +32,8 @@ const takeUntil = function(array, callback) {
   return resultArray;
 };
 
+module.exports = takeUntil;
+
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
@@ -51,8 +53,8 @@ console.log("---");
 const data3 = ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"];
 const results3 = takeUntil(data3, x => x === "bingo!");
 console.log(results3);
-assertArraysEqual(eqArrays(results3, ["I\'ve", "been", "around", "Bingotown", "\,", "I\'ve", "got"]), true) // should pass 
-assertArraysEqual(eqArrays(results3, ["I\'ve", "been", "around", "Bingotown", "\,", "I\'ve", "got", "bingo!"]), false) // should pass as false
+assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got"]), true); // should pass
+assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"]), false); // should pass as false
 
 
 

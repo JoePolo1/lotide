@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   let emojiYes = String.fromCodePoint(0x1F7E2);
   let emojiNo = String.fromCodePoint(0x1F47E);
   if (actual === expected) {
@@ -16,9 +16,9 @@ const assertEqual = function (actual, expected) {
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
-const countOnly = function (allItems, itemsToCount) {
+const countOnly = function(allItems, itemsToCount) {
   //creating an empty object to return later
-  const results = {}
+  const results = {};
   for (const item in itemsToCount) {  //we use a FOR IN statement here
     if (itemsToCount[item]) {
       let count;
@@ -32,6 +32,8 @@ const countOnly = function (allItems, itemsToCount) {
   }
   return results;
 };
+
+module.exports = countOnly;
 
 const firstNames = [
   "Karl",

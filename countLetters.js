@@ -17,6 +17,8 @@ const countLetters = function(sentence) {
   return result;
 };
 
+module.exports = countLetters;
+
 const checker = countLetters("This is a checkpoint");
 assertEqual(checker.T, 1); // checks how many Capital T's there are in the checker variable, there is one uppercase and one lower.
 console.log(countLetters("Joe Polo"));

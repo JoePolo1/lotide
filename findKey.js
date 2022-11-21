@@ -9,13 +9,13 @@ const assertEqual = function(actual, expected) {
   }
 };
 
- const findKey = function(object, callbackFunc)  {
+const findKey = function(object, callbackFunc)  {
   //It should scan the object and return the first key which contains the given value.
   for (const keyName in object) {
     //the below pulls the key name associated with the provided argument and perhaps
-    //more importantly, tells us that the number of the argument is specifically located 
-    // within the value due to bracket notation. The only Values are numbers, "stars" are also keys. 
-    if(callbackFunc(object[keyName])) {
+    //more importantly, tells us that the number of the argument is specifically located
+    // within the value due to bracket notation. The only Values are numbers, "stars" are also keys.
+    if (callbackFunc(object[keyName])) {
       return keyName;
     }
   }
@@ -41,6 +41,7 @@ let resultsChecker = findKey({
   "Lounge":  { stars: 3 }
 }, x => x.stars === 3); // => "Jungle"
 
+module.exports = findKey;
 
 console.log(resultsChecker);
 

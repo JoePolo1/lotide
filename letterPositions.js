@@ -18,6 +18,8 @@
 //   return true;
 // };
 
+const { assert } = require("console");
+
 
 //TEST
 
@@ -53,13 +55,17 @@ const letterPositions = function(sentence) {
   return results;
 };
 
+console.log(`testing for assertArraysEquals which is here as ${assertArraysEqual}`);
+
+module.exports = letterPositions;
+
 letterPositions("hello");
 
 // Test code below:
-assertArraysEqual(letterPositions("hello").e, [1]);
-console.log(letterPositions("hello"));
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// console.log(letterPositions("hello"));
 
-checker = letterPositions("lighthouse in the house");
+// checker = letterPositions("lighthouse in the house");
 
-assertArraysEqual(checker.h,[3, 5, 15, 18]);
-console.log(checker.h,[3, 5, 15, 18])
+// assertArraysEqual(checker.h,[3, 5, 15, 18]);
+// console.log(checker.h,[3, 5, 15, 18])

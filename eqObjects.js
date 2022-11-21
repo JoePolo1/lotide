@@ -9,6 +9,8 @@ const assertArraysEqual = function(actual, expected)  {
   }
 };
 
+console.log(`assertArraysEquals test, it currently looks like this: ${assertArraysEqual}.`);
+
 // EQ Arrays function
 const eqArrays = function(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
@@ -32,7 +34,7 @@ const eqObjects = function(object1, object2) {
   for (const key of keys1)  {
     if (Array.isArray(object1[key]) || Array.isArray(object2[key])) {
       if (eqArrays(object1[key], object2[key])) continue;
-      return false
+      return false;
     }
     if (object1[key] !== object2[key]) return false;
     continue;
@@ -40,13 +42,15 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertObjectsEqual(eqObjects(ab, ba), true); // => true
+module.exports = eqObjects;
 
-const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(eqObjects(ab, abc), false); // => false
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertObjectsEqual(eqObjects(ab, ba), true); // => true
 
-assertObjectsEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
-assertObjectsEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy
-assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);    //should pass
+// const abc = { a: "1", b: "2", c: "3" };
+// assertObjectsEqual(eqObjects(ab, abc), false); // => false
+
+// assertObjectsEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
+// assertObjectsEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy
+// assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);    //should pass
