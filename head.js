@@ -1,14 +1,5 @@
-//Function implementation
-
-const assertEqual = function(actual, expected)  {
-  let emojiYes = String.fromCodePoint(0x1F7E2);
-  let emojiNo = String.fromCodePoint(0x1F47E);
-  if (actual === expected)  {
-    console.log(`Assertion Passed:  ${actual} === ${expected}` + emojiYes + emojiYes + emojiYes);
-  } else {
-    console.assert(actual === expected, (`${actual} !== ${expected}` + emojiNo + emojiNo + emojiNo));
-  }
-};
+//Function require
+const assertEqual = require('./assertEqual');
 
 
 //Creating a function called head which returns the first item in an array
@@ -17,17 +8,5 @@ const head = function(array) {
   return firstChecker;
 };
 
-//Test code
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([]),"Green");
-assertEqual(head([8]), 8);
-
-
-
-//Test code
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("Lighthouse Labs", "Lighthouse Labs");
-assertEqual(1, 2);
+module.exports = head;
 
