@@ -44,13 +44,13 @@ const eqObjects = function(object1, object2) {
 
 module.exports = assertObjectsEqual;
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertObjectsEqual(eqObjects(ab, ba), true); // => true should pass as true = true
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// assertObjectsEqual(eqObjects(ab, ba), true); // => true should pass as true = true
 
-const abc = { a: "1", b: "2", c: "3" };
-assertObjectsEqual(eqObjects(ab, abc), false); // => should return pass, as false = false
+// const abc = { a: "1", b: "2", c: "3" };
+// assertObjectsEqual(eqObjects(ab, abc), false); // => should return pass, as false = false
 
-assertObjectsEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
-assertObjectsEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy
-assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);    //should pass
+// assertObjectsEqual(eqArrays([1, 2, 3], [3, 2, 1]), true); // => should fail
+// assertObjectsEqual(eqArrays([1, 2, "3"], [1, 2, 3]), true); // => Should fail because data type on 3 is different even though ti is semi truthy
+// assertObjectsEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);    //should pass

@@ -21,29 +21,31 @@ const findKey = function(object, callbackFunc)  {
   }
 };
 
-//test case 1
-console.log(findKey({
-  "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
-}, x => x.stars === 2)); // => "noma"
-
-//test case 2
-let resultsChecker = findKey({
-  "House Music": { stars: 1 },
-  "Jungle":   { stars: 3 },
-  "Techno":      { stars: 2 },
-  "Breakbeat":   { stars: 3 },
-  "Trance":       { stars: 2 },
-  "Lounge":  { stars: 3 }
-}, x => x.stars === 3); // => "Jungle"
-
 module.exports = findKey;
 
-console.log(resultsChecker);
+//test case 1
+// console.log(findKey({
+//   "Blue Hill": { stars: 1 },
+//   "Akaleri":   { stars: 3 },
+//   "noma":      { stars: 2 },
+//   "elBulli":   { stars: 3 },
+//   "Ora":       { stars: 2 },
+//   "Akelarre":  { stars: 3 }
+// }, x => x.stars === 2)); // => "noma"
 
-assertEqual(resultsChecker, "BANANA should return a fail"); // should return false, as Akaleri does not equal banana
-assertEqual(resultsChecker, "Jungle"); // Should return true and pass, Akaleri is Akaleri
+// //test case 2
+// let resultsChecker = findKey({
+//   "House Music": { stars: 1 },
+//   "Jungle":   { stars: 3 },
+//   "Techno":      { stars: 2 },
+//   "Breakbeat":   { stars: 3 },
+//   "Trance":       { stars: 2 },
+//   "Lounge":  { stars: 3 }
+// }, x => x.stars === 3); // => "Jungle"
+
+
+
+// console.log(resultsChecker);
+
+// assertEqual(resultsChecker, "BANANA should return a fail"); // should return false, as Akaleri does not equal banana
+// assertEqual(resultsChecker, "Jungle"); // Should return true and pass, Akaleri is Akaleri

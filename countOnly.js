@@ -49,7 +49,7 @@ const firstNames = [
 
 const checker = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(checker["Jason"], 1);
-assertEqual(checker["Karima"], undefined);
-assertEqual(checker["Fang"], 2);
-assertEqual(checker["Agouhanna"], undefined);
+// assertEqual(checker["Jason"], 1);
+// assertEqual(checker["Karima"], undefined);
+// assertEqual(checker["Fang"], 2);
+// assertEqual(checker["Agouhanna"], undefined);

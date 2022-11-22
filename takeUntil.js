@@ -34,29 +34,29 @@ const takeUntil = function(array, callback) {
 
 module.exports = takeUntil;
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
-console.log(results1);
-assertArraysEqual(eqArrays(results1, [ 1, 2, 5, 7, 2]), true);  // Assertion should pass
-assertArraysEqual(eqArrays(results1, [ 1, 2, 5, 7, -1]), false); // Assertion should pass with this false because of the -1
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);
+// console.log(results1);
+// assertArraysEqual(eqArrays(results1, [ 1, 2, 5, 7, 2]), true);  // Assertion should pass
+// assertArraysEqual(eqArrays(results1, [ 1, 2, 5, 7, -1]), false); // Assertion should pass with this false because of the -1
 
-console.log('---');
+// console.log('---');
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, stopCondition => stopCondition === ',');
-console.log(results2);
-assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]), true);  // assertion should pass
-assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'been', 'to', 'New York City' ]), false); // Assertion should pass with this false due to NYC
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, stopCondition => stopCondition === ',');
+// console.log(results2);
+// assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'been', 'to', 'Hollywood' ]), true);  // assertion should pass
+// assertArraysEqual(eqArrays(results2, [ 'I\'ve', 'been', 'to', 'New York City' ]), false); // Assertion should pass with this false due to NYC
 
-console.log("---");
+// console.log("---");
 
-const data3 = ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"];
-const results3 = takeUntil(data3, x => x === "bingo!");
-console.log(results3);
-assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got"]), true); // should pass
-assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"]), false); // should pass as false
+// const data3 = ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"];
+// const results3 = takeUntil(data3, x => x === "bingo!");
+// console.log(results3);
+// assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got"]), true); // should pass
+// assertArraysEqual(eqArrays(results3, ["I've", "been", "around", "Bingotown", ",", "I've", "got", "bingo!"]), false); // should pass as false
 
-
+// console.log(takeUntil(data3, x => x === "bingo!"));
 
 // assertArraysEqual(eqArrays(data1, [ 1, 2, 5, 7, 2 ]),true);
 // console.log(eqArrays(data1, [ 1, 2, 5, 7, 2 ]),true);

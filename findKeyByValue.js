@@ -21,15 +21,15 @@ const findKeyByValue = function(object, value)  {
 module.exports = findKeyByValue;
 
 //Test code
-const bestTVShowsByGenre = {
-  sciFi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
-console.log(findKeyByValue(bestTVShowsByGenre, "That '70s Show"));
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");   //should PASS assert equal
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined); // should PASS because that 70s show is not present, will return undefined
+// const bestTVShowsByGenre = {
+//   sciFi: "The Expanse",
+//   comedy: "Brooklyn Nine-Nine",
+//   drama:  "The Wire"
+// };
+// console.log(findKeyByValue(bestTVShowsByGenre, "The Wire"));
+// console.log(findKeyByValue(bestTVShowsByGenre, "That '70s Show"));
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");   //should PASS assert equal
+// assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined); // should PASS because that 70s show is not present, will return undefined
 
 //Test code
 // assertEqual("Lighthouse Labs", "Bootcamp");
