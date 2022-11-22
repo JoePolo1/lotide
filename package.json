@@ -1,6 +1,6 @@
 {
   "name": "@joepolo1/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This contains a list of functions used for assertation purposes and other adjustments",
   "main": "assertArraysEqual.js",
   "directories": {
