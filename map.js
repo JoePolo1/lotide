@@ -35,10 +35,13 @@ const results1 = map(words, word => word[0]);
 // console.log(results1);
 // assertArraysEqual(eqArrays(results1, ['gr']), true);
 console.log(results1);
-assertArraysEqual(eqArrays(results1, ['g1', 'c1', 't1','m1', 't1', 'c1','y1', 'h1', 'm1']), true);
-console.log(eqArrays(results1, ['g1', 'c1', 't1','m1', 't1', 'c1','y1', 'h1', 'm1']));
-console.log(eqArrays(['co'], ['co']));
-assertArraysEqual(eqArrays(results1, ['g', 'c', 't','m', 't', 'c','y', 'h', 'm']), true);
+console.log(map(words, word => word[0]))
+
+
+// assertArraysEqual(eqArrays(results1, ['g1', 'c1', 't1','m1', 't1', 'c1','y1', 'h1', 'm1']), true);
+// console.log(eqArrays(results1, ['g1', 'c1', 't1','m1', 't1', 'c1','y1', 'h1', 'm1']));
+// console.log(eqArrays(['co'], ['co']));
+// assertArraysEqual(eqArrays(results1, ['g', 'c', 't','m', 't', 'c','y', 'h', 'm']), true);
 // console.log(eqArrays(results1, [['gr'], ['co'], ['t5o'], ['ma'], ['to'], ['ca'], ['yo'], ['he'], ['me']]));
 
 //EQARRAYS and ASSEERTARRAYSEQUAL test data

@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@joepolo1/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "This contains a list of functions used for assertation purposes and other adjustments",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -18,10 +18,10 @@
     "assertion",
     "testing"
   ],
-  "author": "JoePolo1",
+  "author": "@JoePolo1",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JoePolo1/lotide/issues"
+    "url": "https://github.com/JoePolo1"
   },
   "homepage": "https://github.com/JoePolo1/lotide#readme",
   "devDependencies": {

@@ -59,11 +59,11 @@ console.log(`testing for assertArraysEquals which is here as ${assertArraysEqual
 
 module.exports = letterPositions;
 
-letterPositions("hello");
+// letterPositions("hello");
 
 // Test code below:
 // assertArraysEqual(letterPositions("hello").e, [1]);
-// console.log(letterPositions("hello"));
+// console.log(letterPositions("Hello"));
 
 // checker = letterPositions("lighthouse in the house");
 
